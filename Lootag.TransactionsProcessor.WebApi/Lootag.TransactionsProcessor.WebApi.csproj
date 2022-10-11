@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Lootag.TransactionsProcessor.Domain\Lootag.TransactionsProcessor.Domain.csproj" />
+    <ProjectReference Include="..\Lootag.TransactionsProcessor.Services\Lootag.TransactionsProcessor.Services.csproj" />
+    <ContentWithTargetPath Include="./input.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>input.csv</TargetPath>
+    </ContentWithTargetPath>
+  </ItemGroup>
+</Project>
