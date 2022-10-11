@@ -24,3 +24,6 @@ If you don't want to use Docker, you're going to need the .NET 6 sdk, and the .N
 In order to run the tests you're going to need the .NET 6 sdk, and the .NET 6 runtime installed on your machine.
 ### Unit Tests
 I've written a couple of unit tests for the computation of transaction costs. Just cd into `Lootag.TransactionsProcessor.UnitTests` and run `$> dotnet test`.
+
+### Integration Tests
+I've written a couple of integration tests to make sure the api is working correctly. In order to run them, first bring up the docker container, then cd into Lootag.TransactionsProcessor.IntegrationTests and run `$> dotnet test`.

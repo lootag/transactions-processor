@@ -12,12 +12,12 @@ internal record GleifResponse(
     }
 }
 internal record RawSecurityTransactionsResponse(
-    IEnumerable<RawTransactionDto> rawTransactionDtos
+    IEnumerable<RawTransactionDto> RawTransactionDtos
 )
 {
     internal IEnumerable<Lei> Leis()
     {
-        return rawTransactionDtos.Select(dto => new Lei(dto.Lei))
+        return RawTransactionDtos.Select(dto => new Lei(dto.Lei))
                                  .GroupBy(lei => lei.Value)
                                  .Select(g => g.First());
     }
@@ -26,7 +26,7 @@ internal record RawSecurityTransactionsResponse(
         IEnumerable<LegalEntity> legalEntities
     )
     {
-        return rawTransactionDtos.Select(
+        return RawTransactionDtos.Select(
             dto => dto.ToSecurityTransaction(
                 GetLegalEntityWithLeiValue(legalEntities, dto.Lei)
             )

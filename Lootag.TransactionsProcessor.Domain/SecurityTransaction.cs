@@ -34,11 +34,9 @@ public class SecurityTransaction
         switch (LegalEntity.Country)
         {
             case Country.GB:
-                var ret = Notional * Rate - Notional;
-                return ret;
+                return Notional * Rate - Notional;
             case Country.NL:
-                var ret2 = Math.Abs((Notional * 1 / Rate) - Notional);
-                return ret2;
+                return Math.Abs((Notional * 1 / Rate) - Notional);
             default:
                 throw new UnsupportedCountryException(LegalEntity.Country);
         }
